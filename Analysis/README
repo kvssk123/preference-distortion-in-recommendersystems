@@ -1,0 +1,56 @@
+- Load data
+
+  Unzips the movielens zip file. This file should be stored in a folder named "folder"
+- Graphs
+  - Long tail overlooked
+
+    Displays the graph for overlooked long tail items which is used to determine if there is mainstreamness in user choices
+
+  - Cumulative Distribution of Movie Ratings
+
+    Displays the graph for distribution of movie ratings. This is used to determine what should be the range to determine if item is popular, diverse or niche
+
+  - Globally popular items(movies)
+
+    This creates list of popular movies using the mean ratings and number of ratings 
+
+  - Popular genres
+
+    Creates a graph to display genres from the movielens dataset to determine what are mainstream genres
+
+  - Activeness
+
+    Contains activeness related code which also generates the user activeness heatmap
+
+- Final Code
+    - Set Parameters
+      
+      Sets the user id which is used to fetch necessary records. (Eg: in case of recommendation algorithm, it fetches the recommended movies for the user based on the user id)
+    - KNN user based
+
+      Fetches KNN user based recommendations from csv file based on the user id
+    - MF
+
+      Fetches Matrix Factorization recommendations from csv file based on the user id
+    - KNN item based
+
+      Fetches KNN item based recommendations from csv file based on the user id
+    - VAE
+
+      Fetches Variational autoencoder recommendations from csv file based on the user id
+    - preference distortion graph
+
+      Contains the necessary code to calculate genre distribution and plot actual vs recommendation bar graphs
+    - preference distortion based on genre distribution
+
+      Contains graphs using "preference distortion graph" and recommendations generated from any of the recommendation model sections specified. Displays genre distribution graphs in dataset and recommendation set as well as for a particular user
+
+    - Activeness
+
+      Additional activeness related code like getting list of top 10 active users by creating implicit feedback dataset and list of active mainstream users
+
+    - Genre distribution for recommended movies
+
+      Graph to create bar plot based on just one list. Here we use this to display genre distribution just for recommended items.
+
+Note: If the sections in the final code need recommendation list then execute one of the sections of the recommendation algorithms. csv files needed in recommendation model sections follow ['UserID', 'MovieID','Title','genres','Prediction_Rating'] format. For VAE, it is ['UserID', 'MovieID'] but here MovieID is a list of movie ids
